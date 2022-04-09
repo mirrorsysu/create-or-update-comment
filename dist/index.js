@@ -8575,6 +8575,7 @@ var __webpack_exports__ = {};
 const { inspect } = __nccwpck_require__(3837);
 const core = __nccwpck_require__(2186);
 const github = __nccwpck_require__(5438);
+const fs = require("fs");
 
 const REACTION_TYPES = [
   "+1",
@@ -8643,9 +8644,7 @@ async function run() {
     core.debug(`file: ${file}`);
     let fileBody = undefined;
     if (file) {
-      fs.readFile(file, 'utf8', function(err, data) {
-        fileBody = data;
-      });
+      fileBody = fs.readFileSync(path, "utf8");
     }
     core.debug(`fileBody: ${fileBody}`);
     fileBody = "123";

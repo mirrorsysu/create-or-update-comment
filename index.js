@@ -1,6 +1,7 @@
 const { inspect } = require("util");
 const core = require("@actions/core");
 const github = require("@actions/github");
+const fs = require("fs");
 
 const REACTION_TYPES = [
   "+1",
@@ -69,9 +70,7 @@ async function run() {
     core.debug(`file: ${file}`);
     let fileBody = undefined;
     if (file) {
-      fs.readFile(file, 'utf8', function(err, data) {
-        fileBody = data;
-      });
+      fileBody = fs.readFileSync(path, "utf8");
     }
     core.debug(`fileBody: ${fileBody}`);
     fileBody = "123";
