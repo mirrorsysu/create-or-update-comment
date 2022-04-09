@@ -80,7 +80,7 @@ async function run() {
       repository: core.getInput("repository"),
       issueNumber: core.getInput("issue-number"),
       commentId: core.getInput("comment-id"),
-      body: fileBody ?fileBody :core.getInput("body"),
+      body: "123",
       editMode: core.getInput("edit-mode"),
       reactions: core.getInput("reactions")
         ? core.getInput("reactions")
