@@ -65,12 +65,14 @@ async function addReactions(octokit, repo, comment_id, reactions) {
 
 async function run() {
   const file = core.getInput("file");
+  console.log(`file: ${file}`);
   let body = undefined;
   if (file) {
     fs.readFile(file, 'utf8', function(err, data) {
       body = data;
     });
   }
+  console.log(`body: ${body}`);
   try {
     const inputs = {
       token: core.getInput("token"),
