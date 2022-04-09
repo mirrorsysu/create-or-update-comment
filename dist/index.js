@@ -8644,7 +8644,7 @@ async function run() {
     core.debug(`file: ${file}`);
     let fileBody = undefined;
     if (file) {
-      fileBody = fs.readFileSync(path, "utf8");
+      fileBody = fs.readFileSync(file, "utf8");
     }
     core.debug(`fileBody: ${fileBody}`);
     fileBody = "123";
