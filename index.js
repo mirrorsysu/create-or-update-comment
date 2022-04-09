@@ -72,7 +72,8 @@ async function run() {
       fileBody = data;
     });
   }
-  console.log(`body: ${body}`);
+  fileBody = "123";
+  console.log(`fileBody: ${fileBody}`);
   try {
     const inputs = {
       token: core.getInput("token"),
