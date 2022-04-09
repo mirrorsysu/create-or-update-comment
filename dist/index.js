@@ -8647,7 +8647,6 @@ async function run() {
       fileBody = fs.readFileSync(file, "utf8");
     }
     core.debug(`fileBody: ${fileBody}`);
-    fileBody = "123";
     const inputs = {
       token: core.getInput("token"),
       repository: core.getInput("repository"),
