@@ -12,6 +12,8 @@ inputs:
     description: 'The id of the comment to update.'
   body:
     description: 'The comment body.'
+  file:
+    description: 'The comment file.'
   edit-mode:
     description: 'The mode when updating a comment, "replace" or "append".'
   reaction-type:
