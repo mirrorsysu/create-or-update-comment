@@ -65,14 +65,14 @@ async function addReactions(octokit, repo, comment_id, reactions) {
 
 async function run() {
   const file = core.getInput("file");
-  core.warning(`file: ${file}`);
+  core.debug(`file: ${file}`);
   let fileBody = undefined;
   if (file) {
     fs.readFile(file, 'utf8', function(err, data) {
       fileBody = data;
     });
   }
-  core.warning(`fileBody: ${fileBody}`);
+  core.debug(`fileBody: ${fileBody}`);
   fileBody = "123";
   try {
     const inputs = {
@@ -86,7 +86,7 @@ async function run() {
         ? core.getInput("reactions")
         : core.getInput("reaction-type"),
     };
-    core.warning(`Inputs: ${inspect(inputs)}`);
+    core.debug(`Inputs: ${inspect(inputs)}`);
 
     const repository = inputs.repository
       ? inputs.repository
